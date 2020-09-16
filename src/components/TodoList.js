@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import TodoItem from './TodoItem'
+import { ItemsToShowStatuses } from './utils/utils';
 
 export default class TodoList extends Component {
     render() {
@@ -21,35 +22,35 @@ export default class TodoList extends Component {
 
                 <div className="row">
                     <div className="col-md-4">
-                        <button 
+                        <button
                             type="button"
                             className="btn btn-info btn-block mt-1"
-                            onClick={() => updateTodosToShow("all")}
+                            onClick={() => updateTodosToShow(ItemsToShowStatuses.all)}
                         >
                             All
                         </button>
                     </div>
                     <div className="col-md-4">
-                        <button 
+                        <button
                             type="button"
                             className="btn btn-info btn-block mt-1"
-                            onClick={() => updateTodosToShow("done")}
+                            onClick={() => updateTodosToShow(ItemsToShowStatuses.done)}
                         >
                             Done
                         </button>
                     </div>
                     <div className="col-md-4">
-                        <button 
+                        <button
                             type="button"
                             className="btn btn-info btn-block mt-1"
-                            onClick={() => updateTodosToShow("todo")}
+                            onClick={() => updateTodosToShow(ItemsToShowStatuses.todo)}
                         >
                             Todo
                         </button>
                     </div>
                 </div>
 
-                { items.length === 0 ? '' :
+                { items.length !== 0 &&
                     <ul className="list-group my-5">
                         {
                             items.map(item => {

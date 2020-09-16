@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class TodoInput extends Component {
     render() {
-        const {item, handleChange, handleSubmit, editItem} = this.props  
+        const {item, handleChange, handleSubmit, editItem} = this.props;
         
         return (
             <div className="form-holder">
